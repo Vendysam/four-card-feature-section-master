@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root{
+        --redColour: hsl(0, 78%, 62%);
+        --cyanColour: hsl(180, 62%, 55%);
+        --orangeColour: hsl(34, 97%, 64%);
+        --blueColour: hsl(212, 86%, 64%);
+        --veryDarkBlue: hsl(234, 12%, 34%);
+        --grayishBlue: hsl(229, 6%, 66%);
+        --veryLightGray: hsl(0, 0%, 98%);
+        --whiteColour: hsl(0, 0%, 100%);
+}
+
+.container{
+    background-color: var(--whiteColour);
+    height: 100vh;
+    margin-top: 25px;
+    font-family: 'Poppins';
+
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1{
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--grayishBlue);
+    font-family: sans-serif;
+    line-height: 1.5;
+
+}
+header h1:nth-child(2){
+    letter-spacing: 2px;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--veryDarkBlue);
+    line-height: 1.5;
+
+}
+
+header p{
+    color: var(--grayishBlue);
+    font-size: 13px;
+    font-weight: 300;
+    margin-top:15px;
+    margin-left: 15px;
+    text-indent: -60px;
+    
+}
+
+
+main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Position Team Builder on the left */
+.card:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    border-top: 5px solid var(--cyanColour);
+    height: 270px;
+    margin-top: 120px;
+}
+
+/* Position Supervisor and Karma in the middle */
+.card:first-child {
+    grid-column: 2;
+    grid-row: 1;
+    border-top: 5px solid var(--redColour);
+     height: 270px;
+}
+
+.card:last-child {
+    grid-column: 2;
+    grid-row: 2;
+    border-top: 5px solid var(--orangeColour);
+     height: 270px;
+}
+
+/* Position Calculator on the right */
+.card:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    border-top: 5px solid var(--blueColour);
+    margin-top: 120px;
+     height: 270px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--grayishBlue);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin: 12px 0 36px 0;
+}
+
+.card img {
+    display: block;
+    margin-left: auto;
+
+    
+}
+
+
+
+
+@media (max-width: 576px) {
+
+    header{
+        margin-top: 15px;
+        width: auto;
+
+    }
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card:nth-child(1),
+    .card:nth-child(2),
+    .card:nth-child(3),
+    .card:nth-child(4) {
+        grid-column: 1;
+        grid-row: auto;
+        width: auto;
+    }
+}
